@@ -1,6 +1,6 @@
 const my_server = require('./app');
-require('dotenv').config();
-const port = process.env.PORT;
+const config = require('./config/config');
+const port = config.port;
 
 my_server.listen(port, ()=>{
     console.log(`Your server is rouning on http://localhost:${port}`);

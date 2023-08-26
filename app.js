@@ -6,6 +6,12 @@ app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+require('./config/db');
+const userRoute = require('./routes/userRoute');
+
+
+
+app.use('/api/user', userRoute);
 
 app.get('/', (req, res)=>{
     res.send('Hello');
